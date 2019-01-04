@@ -1,0 +1,5 @@
+build/
+vsdev/.vs/
+vsdev/Debug/
+vsdev/Release/
+install/
