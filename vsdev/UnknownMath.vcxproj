@@ -105,6 +105,7 @@
     <ClInclude Include="..\include\UnknownMath.h" />
     <ClInclude Include="..\include\UnknownMathConfig.h" />
     <ClInclude Include="..\include\UnknownMathMat4.h" />
+    <ClInclude Include="..\include\UnknownMathUtility.h" />
     <ClInclude Include="..\include\UnknownMathVec3.h" />
     <ClInclude Include="..\include\UnknownMathVec4.h" />
   </ItemGroup>

@@ -35,5 +35,8 @@
     <ClInclude Include="..\include\UnknownMathVec3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\UnknownMathUtility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
