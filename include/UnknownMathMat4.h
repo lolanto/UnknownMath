@@ -8,6 +8,8 @@ namespace UnknownMath {
 	class Mat4 {
 		friend Mat4 operator*(float rhs, const Mat4& lhs);
 	public:
+		static Mat4 Perspective(float fov, float aspect, float nearZ, float farZ, float LRH = 1.0f);
+	public:
 		Mat4(float value = 0.0f) {
 			int* tempValue = reinterpret_cast<int*>(&value);
 			memset(m_values, *tempValue, 16 * sizeof(float));
@@ -41,6 +43,7 @@ namespace UnknownMath {
 			assert(row < 4 && column < 4);
 			return m_values[column + row * 4];
 		}
+		const float* Data() const { return m_values; }
 	public:
 		UNKNOWN_MATH_STATIC_ALIGNMENT_NEW
 	private:
@@ -91,6 +94,11 @@ namespace UnknownMath {
 		Mat4 ret;
 		UNKNOWN_MATH_OPERATION_LOOP(16, ret = rhs.m_values[i] * lhs);
 		return ret;
+	}
+
+	// Static Function
+	inline Mat4 Mat4::Perspective(float fov, float aspect, float nearZ, float farZ, float LRH) {
+
 	}
 }
 
