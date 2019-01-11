@@ -1,4 +1,4 @@
-﻿#ifndef UNKNWON_MATH_VEC3_H
+#ifndef UNKNWON_MATH_VEC3_H
 #define UNKNOWN_MATH_VEC3_H
 
 #include "UnknownMathConfig.h"
@@ -90,6 +90,7 @@ namespace UnknownMath {
 	}
 
 	Vec3 Vec3::Normalize() const {
+		assert(this->Length() != 0.0f); // avoid divised by zero
 		return this->operator/(this->Length());
 	}
 }

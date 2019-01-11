@@ -109,6 +109,9 @@
     <ClInclude Include="..\include\UnknownMathVec3.h" />
     <ClInclude Include="..\include\UnknownMathVec4.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\doc\CoordinateSys.md" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

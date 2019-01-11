@@ -1,14 +1,16 @@
-﻿#ifndef UNKNOWN_MATH_MAT4_H
+#ifndef UNKNOWN_MATH_MAT4_H
 #define UNKNOWN_MATH_MAT4_H
 
 #include "UnknownMathConfig.h"
 
 namespace UnknownMath {
+	class Vec3;
 	// column major matrix!
 	class Mat4 {
 		friend Mat4 operator*(float rhs, const Mat4& lhs);
 	public:
-		static Mat4 Perspective(float fov, float aspect, float nearZ, float farZ, float LRH = 1.0f);
+		static inline Mat4 PerspectiveLH(float fov, float aspect, float nearZ, float farZ); // 左手坐标系下的投影矩阵
+		static inline Mat4 LookAtLH(const Vec3& pos, const Vec3& lookAt, const Vec3& up = { 0, 1, 0 }); // 左手坐标系下创建摄像机矩阵
 	public:
 		Mat4(float value = 0.0f) {
 			int* tempValue = reinterpret_cast<int*>(&value);
@@ -27,9 +29,9 @@ namespace UnknownMath {
 			const std::array<float, 4>& col2,
 			const std::array<float, 4>& col3) {
 			memcpy(&m_values[0], col0.data(), sizeof(float) * 4);
-			memcpy(&m_values[1], col1.data(), sizeof(float) * 4);
-			memcpy(&m_values[2], col2.data(), sizeof(float) * 4);
-			memcpy(&m_values[3], col3.data(), sizeof(float) * 4);
+			memcpy(&m_values[4], col1.data(), sizeof(float) * 4);
+			memcpy(&m_values[8], col2.data(), sizeof(float) * 4);
+			memcpy(&m_values[12], col3.data(), sizeof(float) * 4);
 		}
 	public:
 		Mat4 operator-() const;
@@ -97,8 +99,12 @@ namespace UnknownMath {
 	}
 
 	// Static Function
-	inline Mat4 Mat4::Perspective(float fov, float aspect, float nearZ, float farZ, float LRH) {
-
+	inline Mat4 Mat4::PerspectiveLH(float fov, float aspect, float nearZ, float farZ) {
+		float cot = atanf(fov / 2.0f);
+		return Mat4({ cot / aspect, 0, 0, 0 }, // col0
+			{ 0, cot, 0, 0 }, // col1
+			{ 0, 0, farZ / (farZ - nearZ), (nearZ * farZ) / (farZ - nearZ) }, // col2
+			{ 0, 0, 1, 0 }); // col3
 	}
 }
 

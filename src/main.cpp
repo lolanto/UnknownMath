@@ -1,12 +1,13 @@
-﻿#include <iostream>
+#include <iostream>
 #include "../include/UnknownMath.h"
 using namespace UnknownMath;
 
 int main() {
-	Vec4Vector v(2);
-	v[0] = Vec4({ 0, 1, 2, 3 });
-	v[1] = Vec4({ 2, 3, 4, 5 });
-	std::cout << (v[0] + v[1]).x() << std::endl;
+	Mat4 pp = Mat4::LookAtLH({ 0, 0, 2 }, { 0, 0, 0 });
+	const float* data = pp.Data();
+	for (int i = 0; i < 16; ++i, ++data) {
+		std::cout << (*data) << '\n';
+	}
 	system("pause");
 	return 0;
 }
