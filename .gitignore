@@ -4,3 +4,6 @@ vsdev/Debug/
 vsdev/Release/
 install/
 vsdev/x64/
+gtest/lib/
+vsdev/UnitTest/Debug/
+vsdev/UnknownMath/Debug/

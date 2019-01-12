@@ -40,6 +40,13 @@ namespace UnknownMath {
 		Mat4 operator-(const Mat4& rhs) const;
 		Mat4 operator/(float rhs) const;
 		float operator[](unsigned int index) const { assert(index < 16); return m_values[index]; }
+		bool operator==(const Mat4& rhs) const { return 0 == memcmp(this, &rhs, sizeof(m_values)); }
+		bool operator!=(const Mat4& rhs) const { return 0 != memcmp(this, &rhs, sizeof(m_values)); }
+		// 警告，除了相同比较以外，其余比较都没有意义
+		bool operator>(const Mat4&rhs) const { return false; }
+		bool operator>=(const Mat4&rhs) const { return false; }
+		bool operator<(const Mat4&rhs) const { return false; }
+		bool operator<=(const Mat4&rhs) const { return false; }
 	public:
 		float Value(unsigned int row, unsigned int column) {
 			assert(row < 4 && column < 4);

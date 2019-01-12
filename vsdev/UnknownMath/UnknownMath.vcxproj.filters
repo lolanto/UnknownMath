@@ -15,33 +15,23 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\include\UnknownMathVec4.h">
+    <ClInclude Include="..\..\include\UnknownMath.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\UnknownMath.h">
+    <ClInclude Include="..\..\include\UnknownMathConfig.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\UnknownMathConfig.h">
+    <ClInclude Include="..\..\include\UnknownMathMat4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\UnknownMathMat4.h">
+    <ClInclude Include="..\..\include\UnknownMathUtility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\UnknownMathVec3.h">
+    <ClInclude Include="..\..\include\UnknownMathVec3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\UnknownMathUtility.h">
+    <ClInclude Include="..\..\include\UnknownMathVec4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\doc\CoordinateSys.md">
-      <Filter>Resource Files</Filter>
-    </None>
   </ItemGroup>
 </Project>

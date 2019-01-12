@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnknownMath", "UnknownMath.vcxproj", "{2680BF82-4ED8-45CF-A57A-DE220390958E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnknownMath", "UnknownMath\UnknownMath.vcxproj", "{2680BF82-4ED8-45CF-A57A-DE220390958E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest", "UnitTest\UnitTest.vcxproj", "{53686919-82AA-407D-AD77-E52B9E47F0A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{2680BF82-4ED8-45CF-A57A-DE220390958E}.Release|x64.Build.0 = Release|x64
 		{2680BF82-4ED8-45CF-A57A-DE220390958E}.Release|x86.ActiveCfg = Release|Win32
 		{2680BF82-4ED8-45CF-A57A-DE220390958E}.Release|x86.Build.0 = Release|Win32
+		{53686919-82AA-407D-AD77-E52B9E47F0A0}.Debug|x64.ActiveCfg = Debug|x64
+		{53686919-82AA-407D-AD77-E52B9E47F0A0}.Debug|x64.Build.0 = Debug|x64
+		{53686919-82AA-407D-AD77-E52B9E47F0A0}.Debug|x86.ActiveCfg = Debug|Win32
+		{53686919-82AA-407D-AD77-E52B9E47F0A0}.Debug|x86.Build.0 = Debug|Win32
+		{53686919-82AA-407D-AD77-E52B9E47F0A0}.Release|x64.ActiveCfg = Release|x64
+		{53686919-82AA-407D-AD77-E52B9E47F0A0}.Release|x64.Build.0 = Release|x64
+		{53686919-82AA-407D-AD77-E52B9E47F0A0}.Release|x86.ActiveCfg = Release|Win32
+		{53686919-82AA-407D-AD77-E52B9E47F0A0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
