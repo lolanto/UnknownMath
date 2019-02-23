@@ -3,6 +3,7 @@
 
 #include "UnknownMathConfig.h"
 namespace UnknownMath {
+	class Mat4;
 	class Vec4 {
 	public:
 		Vec4(float xyzw = 0.0f) {
@@ -24,11 +25,16 @@ namespace UnknownMath {
 		inline Vec4 operator+(const Vec4& rhs) const;
 		inline Vec4 operator-(const Vec4& rhs) const;
 		inline Vec4 operator* (float rhs) const;
+		inline Vec4 operator* (const Mat4& rhs) const;
 		inline Vec4 operator/ (float rhs) const;
+		inline bool operator==(const Vec4& rhs) const { return (0 != memcmp(m_values, rhs.m_values, 4 * sizeof(float))); }
+		inline bool operator!=(const Vec4& rhs) const { return (0 == memcmp(m_values, rhs.m_values, 4 * sizeof(float))); }
 		inline float Dot(const Vec4& rhs) const;
 		inline float Length() const;
 		inline float LengthSquare() const;
 		inline Vec4 Normalize() const;
+	public:
+		inline float& operator[](int i) { assert(i >= 0 && i < 4); return m_values[i]; }
 	public:
 		inline float x() const { return m_values[0]; }
 		inline float y() const { return m_values[1]; }
